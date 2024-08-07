@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A-Frame 3D Model Example</title>
+    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1.3.0/dist/aframe-master.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        a-scene {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <a-scene>
+        <!-- Define a simple environment -->
+        <a-sky color="#ECECEC"></a-sky>
+        <a-light type="ambient" color="#FFF"></a-light>
+        <a-light type="directional" position="-1 2 1" target="#model"></a-light>
+
+        <!-- Add a camera -->
+        <a-camera position="0 1.6 3"></a-camera>
+
+        <!-- Load your 3D model -->
+        <a-entity
+            id="model"
+            gltf-model="model/model.gltf"
+            scale="1 1 1"
+            position="0 0 0"
+        >
+        </a-entity>
+    </a-scene>
+</body>
+</html>
